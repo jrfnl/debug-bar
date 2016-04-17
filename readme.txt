@@ -3,7 +3,7 @@ Contributors: wordpressdotorg, ryan, westi, koopersmith, duck_, mitchoyoshitaka,
 Tags: debug
 Tested up to: 4.5
 Stable tag: 0.8.4
-Requires at least: 3.1
+Requires at least: 3.2
 
 Adds a debug menu to the admin bar that shows query, cache, and other helpful debugging information.
 
@@ -88,6 +88,28 @@ Added deprecated function usage tracking
 Initial Release
 
 == Changelog ==
+
+= Trunk =
+* [Bugfix] PHP Error logging was only started when the admin bar was initialized which meant it did not catch nor show any errors generated before that point.
+* [Bugfix] Deprecated notice logging was only started when the admin bar was initialized which meant it did not catch nor show any errors generated before that point.
+* [Bugfix] Fix some error notices for PHP 5.2.
+* [Bugfix] Diminish bleed through of front-end CSS styling.
+* [Bugfix] Added the missing message text for deprecated arguments.
+* [Bugfix] Fixed the classification of the various deprecated notices - previously all would be seen as functions.
+* [Bugfix] Prevent things looking weird when the current locale is RTL based.
+* [Enhancement] Added logging of PHP strict, deprecated and silenced error notices to the PHP panel.
+* [Enhancement] Added logging of deprecated constructors to the deprecated panel.
+* [Enhancement] Add a new panel showing 'doing it wrong' notices.
+* [Enhancement] Even though display of deprecated/doing it wrong and other notices is not send to the screen - as they are displayed in their respective debug bar panels instead -, *do* continue to send them to the error log if one has been set up.
+* [Enhancement] Improve usability by showing error counts in the panel menu for PHP/Deprecated/JS/Doing It Wrong.
+* [Enhancement] Improve usability by colourizing the button in the admin bar late. This allows for the button to show there are warning or notices even after the button was created.
+* [Enhancement] Improve usability by also colourizing the button in the admin bar for Deprecated/Doing it Wrong notices.
+* [Enhancement] Improve readability of the WP Query - Queried object information.
+* [Enhancement] Introduce the `debug_bar_enable` filter which allows for selectively giving access to the debug bar for additional users, such as site-admins in a multi-site environment.
+* [Enhancement] Allow for large(r) number of add-ons in the panel menu.
+* [Enhancement] Throw deprecated constructor notices for Debug Bar plugins using the old constructors.
+* [Enhancement] The Debug bar plugin is now fully translatable. If you'd like to translate the plugin to your own language, head on over to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/debug-bar).
+* Minor refactoring
 
 = 0.8.4 =
 Updated to avoid incompatibilities with some extensions.
