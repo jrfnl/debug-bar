@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Debug Bar\n"
-"POT-Creation-Date: 2016-04-16 17:01+0200\n"
+"POT-Creation-Date: 2016-04-17 12:19+0200\n"
 "PO-Revision-Date: 2016-04-13 05:46+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,73 +20,140 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: debug-bar.php:153
+#: debug-bar.php:205
 msgid "Debug"
 msgstr ""
 
 #. TRANSLATORS: %d is the site id number in a multi-site setting.
-#: debug-bar.php:217
+#: debug-bar.php:269
 #, php-format
 msgid "#%d"
 msgstr ""
 
-#: debug-bar.php:221
+#: debug-bar.php:273
 msgid "PHP"
 msgstr ""
 
-#: debug-bar.php:224
+#: debug-bar.php:276
 msgid "DB"
 msgstr ""
 
-#: debug-bar.php:224
+#: debug-bar.php:276
 msgid "MySQL"
 msgstr ""
 
-#: debug-bar.php:232
+#: debug-bar.php:284
 msgid "Memory Usage"
 msgstr ""
 
 #. TRANSLATORS: %s is a formatted number representing the memory usage.
-#: debug-bar.php:234
+#: debug-bar.php:286
 #, php-format
 msgid "%s bytes"
 msgstr ""
 
-#: debug-bar.php:240
+#: debug-bar.php:292
 msgid "Please Enable"
 msgstr ""
 
-#: panels/class-debug-bar-deprecated.php:10
+#: panels/class-debug-bar-deprecated.php:35
 msgid "Deprecated"
 msgstr ""
 
-#: panels/class-debug-bar-deprecated.php:31
+#: panels/class-debug-bar-deprecated.php:65
 msgid "Total Functions:"
 msgstr ""
 
-#: panels/class-debug-bar-deprecated.php:32
-msgid "Total Arguments:"
-msgstr ""
-
-#: panels/class-debug-bar-deprecated.php:33
+#: panels/class-debug-bar-deprecated.php:66
 msgid "Total Files:"
 msgstr ""
 
-#. TRANSLATORS: %1$s is a function or file name, %2$s a version number, %3$s an alternative function or file to use.
-#: panels/class-debug-bar-deprecated.php:84
-#: panels/class-debug-bar-deprecated.php:101
+#: panels/class-debug-bar-deprecated.php:67
+msgid "Total Arguments:"
+msgstr ""
+
+#: panels/class-debug-bar-deprecated.php:68
+msgid "Total Constructors:"
+msgstr ""
+
+#. TRANSLATORS: 1: a function or file name, 2: version number, 3: alternative function or file to use.
+#: panels/class-debug-bar-deprecated.php:110
+#: panels/class-debug-bar-deprecated.php:128
 #, php-format
 msgid ""
 "%1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
 msgstr ""
 
-#. TRANSLATORS: %1$s is a function or file name, %2$s a version number.
-#: panels/class-debug-bar-deprecated.php:87
-#: panels/class-debug-bar-deprecated.php:104
+#. TRANSLATORS: 1: a function or file name, 2: version number.
+#: panels/class-debug-bar-deprecated.php:113
+#: panels/class-debug-bar-deprecated.php:131
 #, php-format
 msgid ""
 "%1$s is <strong>deprecated</strong> since version %2$s with no alternative "
 "available."
+msgstr ""
+
+#. TRANSLATORS: 1: a function name, 2: a version number, 3: information about an alternative.
+#: panels/class-debug-bar-deprecated.php:153
+#, php-format
+msgid ""
+"%1$s was called with an argument that is <strong>deprecated</strong> since "
+"version %2$s! %3$s"
+msgstr ""
+
+#. TRANSLATORS: 1: a function name, 2: a version number.
+#: panels/class-debug-bar-deprecated.php:156
+#, php-format
+msgid ""
+"%1$s was called with an argument that is <strong>deprecated</strong> since "
+"version %2$s with no alternative available."
+msgstr ""
+
+#. TRANSLATORS: 1: PHP class name, 2: PHP parent class name, 3: version number, 4: __construct() method
+#: panels/class-debug-bar-deprecated.php:174
+#, php-format
+msgid ""
+"The called constructor method for %1$s in %2$s is <strong>deprecated</"
+"strong> since version %3$s! Use %4$s instead."
+msgstr ""
+
+#. TRANSLATORS: 1: PHP class name, 2: version number, 3: __construct() method
+#: panels/class-debug-bar-deprecated.php:178
+#, php-format
+msgid ""
+"The called constructor method for %1$s is <strong>deprecated</strong> since "
+"version %2$s! Use %3$s instead."
+msgstr ""
+
+#: panels/class-debug-bar-doingitwrong.php:18
+msgid "Doing It Wrong"
+msgstr ""
+
+#: panels/class-debug-bar-doingitwrong.php:28
+msgid "Total Calls:"
+msgstr ""
+
+#. TRANSLATORS: %s: version number
+#: panels/class-debug-bar-doingitwrong.php:42
+#, php-format
+msgid "(This message was added in version %s.)"
+msgstr ""
+
+#. TRANSLATORS: %s: Codex URL
+#: panels/class-debug-bar-doingitwrong.php:44
+#, php-format
+msgid ""
+"Please see <a href=\"%s\">Debugging in WordPress</a> for more information."
+msgstr ""
+
+#: panels/class-debug-bar-doingitwrong.php:45
+msgid "https://codex.wordpress.org/Debugging_in_WordPress"
+msgstr ""
+
+#. TRANSLATORS: 1: function name, 2: link to more information, 3: version information
+#: panels/class-debug-bar-doingitwrong.php:48
+#, php-format
+msgid "%1$s was called <strong>incorrectly</strong>. %2$s %3$s"
 msgstr ""
 
 #: panels/class-debug-bar-js.php:7
@@ -101,31 +168,55 @@ msgstr ""
 msgid "Object Cache"
 msgstr ""
 
-#: panels/class-debug-bar-php.php:12
+#: panels/class-debug-bar-php.php:28
 msgid "Notices / Warnings"
 msgstr ""
 
-#: panels/class-debug-bar-php.php:61
+#: panels/class-debug-bar-php.php:100
 msgid "Total Warnings:"
 msgstr ""
 
-#: panels/class-debug-bar-php.php:62
+#: panels/class-debug-bar-php.php:101
 msgid "Total Notices:"
 msgstr ""
 
-#: panels/class-debug-bar-php.php:67
+#: panels/class-debug-bar-php.php:102
+msgid "Total Strict Notices:"
+msgstr ""
+
+#: panels/class-debug-bar-php.php:103
+msgid "Total Deprecated:"
+msgstr ""
+
+#: panels/class-debug-bar-php.php:104
+msgid "Total Silenced:"
+msgstr ""
+
+#: panels/class-debug-bar-php.php:106
 msgid "WARNING:"
 msgstr ""
 
-#: panels/class-debug-bar-php.php:79
+#: panels/class-debug-bar-php.php:107
 msgid "NOTICE:"
+msgstr ""
+
+#: panels/class-debug-bar-php.php:108
+msgid "STRICT:"
+msgstr ""
+
+#: panels/class-debug-bar-php.php:109
+msgid "DEPRECATED:"
+msgstr ""
+
+#: panels/class-debug-bar-php.php:110
+msgid "SILENCED:"
 msgstr ""
 
 #: panels/class-debug-bar-queries.php:5
 msgid "Queries"
 msgstr ""
 
-#. TRANSLATORS: %s = a url.
+#. TRANSLATORS: 1: a url.
 #: panels/class-debug-bar-queries.php:29
 #, php-format
 msgid ""
@@ -133,7 +224,7 @@ msgid ""
 "a>"
 msgstr ""
 
-#. TRANSLATORS: %d = duration time in microseconds.
+#. TRANSLATORS: %d: duration time in microseconds.
 #: panels/class-debug-bar-queries.php:50
 #, php-format
 msgid "%0.1fms"
@@ -159,7 +250,7 @@ msgstr ""
 msgid "Total query time:"
 msgstr ""
 
-#. TRANSLATORS: %d = duration time in microseconds.
+#. TRANSLATORS: %d: duration time in microseconds.
 #: panels/class-debug-bar-queries.php:78
 #, php-format
 msgid "%0.1f ms"

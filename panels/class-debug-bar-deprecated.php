@@ -106,10 +106,10 @@ class Debug_Bar_Deprecated extends Debug_Bar_Panel {
 		$file = $backtrace[ $bt ]['file'];
 		$line = $backtrace[ $bt ]['line'];
 		if ( ! is_null($replacement) ) {
-			/* TRANSLATORS: %1$s is a function or file name, %2$s a version number, %3$s an alternative function or file to use. */
+			/* TRANSLATORS: 1: a function or file name, 2: version number, 3: alternative function or file to use. */
 			$message = sprintf( __('%1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead.', 'debug-bar'), $function, $version, $replacement );
 		} else {
-			/* TRANSLATORS: %1$s is a function or file name, %2$s a version number. */
+			/* TRANSLATORS: 1: a function or file name, 2: version number. */
 			$message = sprintf( __('%1$s is <strong>deprecated</strong> since version %2$s with no alternative available.', 'debug-bar'), $function, $version );
 		}
 
@@ -124,10 +124,10 @@ class Debug_Bar_Deprecated extends Debug_Bar_Panel {
 		$line = $backtrace[4]['line'];
 		$message = empty( $message ) ? '' : ' ' . $message;
 		if ( ! is_null( $replacement ) ) {
-			/* TRANSLATORS: %1$s is a function or file name, %2$s a version number, %3$s an alternative function or file to use. */
+			/* TRANSLATORS: 1: a function or file name, 2: version number, 3: alternative function or file to use. */
 			$message = sprintf( __('%1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead.', 'debug-bar'), $file_abs, $version, $replacement ) . $message;
 		} else {
-			/* TRANSLATORS: %1$s is a function or file name, %2$s a version number. */
+			/* TRANSLATORS: 1: a function or file name, 2: version number. */
 			$message = sprintf( __('%1$s is <strong>deprecated</strong> since version %2$s with no alternative available.', 'debug-bar'), $file_abs, $version ) . $message;
 		}
 
@@ -149,8 +149,10 @@ class Debug_Bar_Deprecated extends Debug_Bar_Panel {
 		$file = $backtrace[ $bt ]['file'];
 		$line = $backtrace[ $bt ]['line'];
 		if ( ! is_null( $message ) ) {
+			/* TRANSLATORS: 1: a function name, 2: a version number, 3: information about an alternative. */
 			$message = sprintf( __('%1$s was called with an argument that is <strong>deprecated</strong> since version %2$s! %3$s'), $function, $version, $message );
 		} else {
+			/* TRANSLATORS: 1: a function name, 2: a version number. */
 			$message = sprintf( __('%1$s was called with an argument that is <strong>deprecated</strong> since version %2$s with no alternative available.'), $function, $version );
 		}
 
@@ -168,11 +170,11 @@ class Debug_Bar_Deprecated extends Debug_Bar_Panel {
 		$line = $backtrace[ $bt ]['line'];
 
 		if ( ! empty( $parent_class ) ) {
-			/* translators: 1: PHP class name, 2: PHP parent class name, 3: version number, 4: __construct() method */
+			/* TRANSLATORS: 1: PHP class name, 2: PHP parent class name, 3: version number, 4: __construct() method */
 			$message = sprintf( __( 'The called constructor method for %1$s in %2$s is <strong>deprecated</strong> since version %3$s! Use %4$s instead.', 'debug-bar' ),
 				$class, $parent_class, $version, '<pre>__construct()</pre>' );
 		} else {
-			/* translators: 1: PHP class name, 2: version number, 3: __construct() method */
+			/* TRANSLATORS: 1: PHP class name, 2: version number, 3: __construct() method */
 			$message = sprintf( __( 'The called constructor method for %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead.', 'debug-bar' ),
 				$class, $version, '<pre>__construct()</pre>' );
 		}

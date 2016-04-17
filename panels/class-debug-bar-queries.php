@@ -25,7 +25,7 @@ class Debug_Bar_Queries extends Debug_Bar_Panel {
 			$show_many = isset($_GET['debug_queries']);
 
 			if ( $wpdb->num_queries > 500 && ! $show_many ) {
-				/* TRANSLATORS: %s = a url. */
+				/* TRANSLATORS: 1: a url. */
 				$out .= "<p>" . sprintf( __('There are too many queries to show easily! <a href="%s">Show them anyway</a>', 'debug-bar'), esc_url( add_query_arg( 'debug_queries', 'true' ) ) ) . "</p>";
 			}
 
@@ -46,7 +46,7 @@ class Debug_Bar_Queries extends Debug_Bar_Panel {
 				$debug = str_replace( array( 'do_action, call_user_func_array' ), array( 'do_action' ), $debug );
 				$query = nl2br(esc_html($query));
 
-				/* TRANSLATORS: %d = duration time in microseconds. */
+				/* TRANSLATORS: %d: duration time in microseconds. */
 				$out .= "<li>$query<br/><div class='qdebug'>$debug <span>#{$counter} (" . sprintf( __( '%0.1fms', 'debug-bar' ), number_format_i18n( ( $elapsed * 1000 ), 1 ) ) . ")</span></div></li>\n";
 			}
 			$out .= '</ol>';
@@ -74,7 +74,7 @@ class Debug_Bar_Queries extends Debug_Bar_Panel {
 		}
 		if ( $total_time ) {
 			$heading .= '<h2><span>' . __( 'Total query time:', 'debug-bar' ) . '</span>';
-			/* TRANSLATORS: %d = duration time in microseconds. */
+			/* TRANSLATORS: %d: duration time in microseconds. */
 			$heading .= sprintf( __( '%0.1f ms', 'debug-bar' ), number_format_i18n( ( $total_time * 1000 ), 1 ) ) . "</h2>\n";
 		}
 		if ( ! empty($EZSQL_ERROR) ) {

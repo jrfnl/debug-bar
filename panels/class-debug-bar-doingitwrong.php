@@ -38,11 +38,13 @@ class Debug_Bar_Doing_It_Wrong extends Debug_Bar_Deprecated {
 		}
 		$file = $backtrace[ $bt ]['file'];
 		$line = $backtrace[ $bt ]['line'];
+		/* TRANSLATORS: %s: version number */
 		$version = is_null( $version ) ? '' : sprintf( __( '(This message was added in version %s.)' ), $version );
-		/* translators: %s: Codex URL */
+		/* TRANSLATORS: %s: Codex URL */
 		$message .= ' ' . sprintf( __( 'Please see <a href="%s">Debugging in WordPress</a> for more information.' ),
 			__( 'https://codex.wordpress.org/Debugging_in_WordPress' )
 		);
+		/* TRANSLATORS: 1: function name, 2: link to more information, 3: version information */
 		$notice = sprintf( __( '%1$s was called <strong>incorrectly</strong>. %2$s %3$s' ), $function, $message, $version );
 
 		error_log( $notice );
