@@ -7,7 +7,6 @@
  Version: 0.8.4
  Author URI: https://wordpress.org/
  Text Domain: debug-bar
- Domain Path: /languages
  */
 
 /***
@@ -36,7 +35,7 @@ class Debug_Bar {
 		if ( ! is_super_admin() || ! is_admin_bar_showing() || $this->is_wp_login() )
 			return;
 
-		self::load_textdomain( 'debug-bar' );
+		load_plugin_textdomain( 'debug-bar' );
 
 		add_action( 'admin_bar_menu',               array( &$this, 'admin_bar_menu' ), 1000 );
 		add_action( 'admin_footer',                 array( &$this, 'render' ), 1000 );
@@ -55,26 +54,6 @@ class Debug_Bar {
 	 */
 	function is_wp_login() {
 		return 'wp-login.php' == basename( $_SERVER['SCRIPT_NAME'] );
-	}
-
-	/**
-	 * Load the plugin text strings.
-	 *
-	 * Compatible with use of the plugin in the must-use plugins directory.
-	 *
-	 * @param string $domain Text domain to load.
-	 */
-	static function load_textdomain( $domain ) {
-		if ( is_textdomain_loaded( $domain ) ) {
-			return;
-		}
-
-		$lang_path = dirname( plugin_basename( __FILE__ ) ) . '/languages';
-		if ( false === strpos( __FILE__, basename( WPMU_PLUGIN_DIR ) ) ) {
-			load_plugin_textdomain( $domain, false, $lang_path );
-		} else {
-			load_muplugin_textdomain( $domain, $lang_path );
-		}
 	}
 
 	function init_ajax() {
